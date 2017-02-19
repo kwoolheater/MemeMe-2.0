@@ -19,7 +19,6 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var bottomToolbar: UIToolbar!
     var currentTextField:String = ""
     
-    
     let memeTextAttributes: [String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
