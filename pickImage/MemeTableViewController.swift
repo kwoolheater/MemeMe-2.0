@@ -8,25 +8,25 @@
 
 import UIKit
 
-class MemeTableViewController: UIViewController, UITableViewDelegate {
+class MemeTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var memeData: [Meme]!
+    var _tableView: UITableView!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var memeData: [Meme] {
+        return appDelegate.memes
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memeData = appDelegate.memes
-        
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //number of rows in table view
         return self.memeData.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeCell")!
         
