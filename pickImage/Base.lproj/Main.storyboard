@@ -13,7 +13,7 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="8ME-qH-2SC">
             <objects>
-                <viewController storyboardIdentifier="MemeEditorViewController" id="ccy-Oc-GrS" customClass="MemeEditorViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeEditorViewController" hidesBottomBarWhenPushed="YES" id="ccy-Oc-GrS" customClass="MemeEditorViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4RM-Ys-g5W"/>
                         <viewControllerLayoutGuide type="bottom" id="aod-Uz-fCc"/>
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G06-D0-qyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-141" y="-348"/>
+            <point key="canvasLocation" x="-70" y="-349"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e00-xw-NPD">
@@ -123,7 +123,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhW-TM-exy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2047" y="-347"/>
+            <point key="canvasLocation" x="-2241" y="-349"/>
         </scene>
         <!--Grid-->
         <scene sceneID="v3p-44-ZpZ">
@@ -137,7 +137,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iU-eK-ZwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1393" y="32"/>
+            <point key="canvasLocation" x="-1458" y="33"/>
         </scene>
         <!--Table-->
         <scene sceneID="qok-Ht-bu5">
@@ -154,7 +154,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tS9-uO-V12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1366" y="-775"/>
+            <point key="canvasLocation" x="-1458" y="-777"/>
         </scene>
         <!--Meme Table View Controller-->
         <scene sceneID="QBO-Et-7Wo">
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aW-ak-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="-348"/>
+            <point key="canvasLocation" x="570" y="-349"/>
         </scene>
     </scenes>
 </document>
