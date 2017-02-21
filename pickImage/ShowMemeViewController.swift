@@ -19,4 +19,16 @@ class ShowMemeViewController: UIViewController {
         self.image!.image = meme.memedImage
     }
     
+    @IBAction func editButton(_ sender: Any) {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+        
+        //populate the data
+        detailController.imagePickerView!.image = meme?.originalImage
+        detailController.topTextField!.text = meme?.topText
+        detailController.bottomTextField!.text = meme?.bottomText
+        
+        //push controller
+        navigationController!.pushViewController(detailController, animated: true)
+    }
+    
 }

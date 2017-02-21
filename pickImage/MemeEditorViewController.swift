@@ -150,12 +150,13 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
             activity, completed, items, error in
             if completed {
                 self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "tabBarSegue", sender: self)
             }
         }
         
         self.present(activityVC, animated: true, completion: nil)
         
-        performSegue(withIdentifier: "tabBarSegue", sender: self)
+        
         
     }
     

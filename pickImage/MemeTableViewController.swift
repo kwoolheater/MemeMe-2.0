@@ -21,6 +21,10 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //number of rows in table view
         return self.memeData.count
@@ -49,4 +53,5 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         //push controller
         navigationController!.pushViewController(detailController, animated: true)
     }
+    
 }
