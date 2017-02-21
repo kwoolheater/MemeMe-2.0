@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G06-D0-qyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="-349"/>
+            <point key="canvasLocation" x="84" y="-349"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e00-xw-NPD">
@@ -218,6 +218,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DXi-aE-bsA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Hea-Pq-q7R"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h2Z-fh-Zlg">
                             <connections>
                                 <segue destination="ccy-Oc-GrS" kind="show" id="YLW-i9-j2y"/>
@@ -227,12 +228,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-Cc-d2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802" y="-776"/>
+            <point key="canvasLocation" x="-702" y="-778"/>
         </scene>
         <!--Show Meme View Controller-->
         <scene sceneID="gkx-J0-MpQ">
             <objects>
-                <viewController id="DDC-K2-bGA" customClass="ShowMemeViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowMemeViewController" id="DDC-K2-bGA" customClass="ShowMemeViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9XJ-OU-InK"/>
                         <viewControllerLayoutGuide type="bottom" id="T0t-w2-vS1"/>
@@ -259,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aW-ak-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="-349"/>
+            <point key="canvasLocation" x="860" y="-349"/>
         </scene>
     </scenes>
 </document>
