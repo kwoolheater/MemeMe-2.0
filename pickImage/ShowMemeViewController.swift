@@ -10,9 +10,9 @@ import UIKit
 
 class ShowMemeViewController: UIViewController {
     
-    var meme: Meme!
-    
     @IBOutlet weak var image: UIImageView!
+    
+    var meme: Meme!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,7 +28,9 @@ class ShowMemeViewController: UIViewController {
         detailController.bottomTextField!.text = meme?.bottomText
         
         //push controller
-        navigationController!.pushViewController(detailController, animated: true)
+        
+        
+        self.navigationController!.pushViewController(detailController, animated: true)
     }
     
 }

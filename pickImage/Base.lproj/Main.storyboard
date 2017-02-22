@@ -106,6 +106,54 @@
             </objects>
             <point key="canvasLocation" x="84" y="-349"/>
         </scene>
+        <!--Show Meme View Controller-->
+        <scene sceneID="0Ok-AH-0su">
+            <objects>
+                <viewController storyboardIdentifier="ShowMemeViewController" id="9mU-cF-4QK" customClass="ShowMemeViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Xw-Ym-CWo"/>
+                        <viewControllerLayoutGuide type="bottom" id="5o5-Kr-3qE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u3j-nl-PGY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gjl-dT-9yU">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2I1-Wt-S03">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="axb-OA-YLP">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="w5W-zs-FKB">
+                                            <connections>
+                                                <action selector="editButton:" destination="9mU-cF-4QK" id="4cj-bq-kSJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gjl-dT-9yU" firstAttribute="leading" secondItem="u3j-nl-PGY" secondAttribute="leadingMargin" id="0LP-8r-oWn"/>
+                            <constraint firstItem="5o5-Kr-3qE" firstAttribute="top" secondItem="gjl-dT-9yU" secondAttribute="bottom" constant="20" id="JyV-qY-OUu"/>
+                            <constraint firstItem="gjl-dT-9yU" firstAttribute="top" secondItem="8Xw-Ym-CWo" secondAttribute="bottom" id="MTG-gD-UKw"/>
+                            <constraint firstItem="gjl-dT-9yU" firstAttribute="trailing" secondItem="u3j-nl-PGY" secondAttribute="trailingMargin" id="qeD-9R-pGD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ORL-AD-xBq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0w2-Sw-iu2"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="image" destination="gjl-dT-9yU" id="fsS-Yp-dKS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5SE-kt-nCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-349"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e00-xw-NPD">
             <objects>
@@ -187,6 +235,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="M8s-2f-t8l" id="JXj-mB-UNH"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLf-xS-hsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,59 +329,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memeTableView" destination="lcM-D5-2JY" id="9K3-Be-Muf"/>
+                        <segue destination="9mU-cF-4QK" kind="show" identifier="detailedViewController" id="Ttv-Rx-Pfa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-Cc-d2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-703.20000000000005" y="-778.56071964017997"/>
         </scene>
-        <!--Show Meme View Controller-->
-        <scene sceneID="gkx-J0-MpQ">
-            <objects>
-                <viewController storyboardIdentifier="ShowMemeViewController" id="DDC-K2-bGA" customClass="ShowMemeViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9XJ-OU-InK"/>
-                        <viewControllerLayoutGuide type="bottom" id="T0t-w2-vS1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Vw9-zo-XvG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-5g-YEm">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="54V-rc-QEh"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="image" destination="IrB-5g-YEm" id="VO0-8E-0h2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5aW-ak-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1594" y="-349"/>
-        </scene>
-        <!--ShowMemeNavigationController-->
-        <scene sceneID="wpo-Kj-9Me">
-            <objects>
-                <navigationController title="ShowMemeNavigationController" id="i1Q-EV-UOI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lXq-TP-c8f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="DDC-K2-bGA" kind="relationship" relationship="rootViewController" id="aaR-id-800"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Fe-h7-SWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="844" y="-349"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ejS-81-qEJ"/>
+        <segue reference="YLW-i9-j2y"/>
     </inferredMetricsTieBreakers>
 </document>

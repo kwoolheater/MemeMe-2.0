@@ -10,7 +10,7 @@ import UIKit
 
 class MemeTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var _tableView: UITableView!
+    @IBOutlet weak var memeTableView: UITableView!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var memeData: [Meme] {
@@ -43,15 +43,21 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //get the view controller from storybord
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "ShowMemeViewController") as! ShowMemeViewController
-        
-        //populate the data
-        let memeForRow = self.memeData[indexPath.row]
-        detailController.meme = memeForRow
-        
         //push controller
-        navigationController!.pushViewController(detailController, animated: true)
+        performSegue(withIdentifier: "detailedViewController", sender: nil)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let cell = sender as? UITableViewCell {
+            let i = memeTableView.indexPath(for: cell)!.row
+            if segue.identifier == "detailedViewController" {
+                let vc = segue.destination as! ShowMemeViewController
+                vc.meme = self.memeData[i]
+            }
+        }
     }
     
 }
