@@ -134,10 +134,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="DE2-cf-j42" kind="relationship" relationship="rootViewController" id="Qg6-aO-w7t"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iU-eK-ZwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1458" y="33"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="xVB-R8-q9u">
+            <objects>
+                <collectionViewController storyboardIdentifier="CollectionViewController" id="DE2-cf-j42" customClass="CollectionViewController" customModule="MemeMe_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="iWA-fd-Lfr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M8s-2f-t8l">
+                            <size key="itemSize" width="106" height="105"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="sVS-Te-xxG" customClass="MemeCollectionViewCell" customModule="MemeMe_2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="106" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="106" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-DV-89s">
+                                            <rect key="frame" x="0.0" y="0.0" width="106" height="105"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="memeImage" destination="bcd-DV-89s" id="hDU-eb-fj1"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="DE2-cf-j42" id="blP-RL-S4K"/>
+                            <outlet property="delegate" destination="DE2-cf-j42" id="bvX-MZ-awn"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="7t9-Li-pHH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hOw-vR-DEr">
+                            <connections>
+                                <segue destination="ccy-Oc-GrS" kind="show" id="ejS-81-qEJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bLf-xS-hsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679.20000000000005" y="35.532233883058474"/>
         </scene>
         <!--Table-->
         <scene sceneID="qok-Ht-bu5">
@@ -277,4 +330,7 @@
             <point key="canvasLocation" x="844" y="-349"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ejS-81-qEJ"/>
+    </inferredMetricsTieBreakers>
 </document>
