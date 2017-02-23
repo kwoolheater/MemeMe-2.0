@@ -44,20 +44,20 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //push controller
-        performSegue(withIdentifier: "detailedViewController", sender: nil)
+        performSegue(withIdentifier: "detailedViewController", sender: indexPath.row)
         
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let cell = sender as? UITableViewCell {
-            let i = memeTableView.indexPath(for: cell)!.row
-            if segue.identifier == "detailedViewController" {
-                let vc = segue.destination as! ShowMemeViewController
-                vc.meme = self.memeData[i]
-            }
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailedViewController" {
+            let showMemeVC = segue.destination as! ShowMemeViewController
+            let memeData = sender as! Meme
+            showMemeVC.memeData = memeData
         }
+        
     }
+    
     
 }

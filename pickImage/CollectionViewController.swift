@@ -51,7 +51,7 @@ class CollectionViewController: UICollectionViewController {
         
         //populate the data
         let memeForRow = self.memeData[indexPath.row]
-        detailController.meme = memeForRow
+        detailController.memeData = memeForRow
         
         //push controller
         navigationController!.pushViewController(detailController, animated: true)
