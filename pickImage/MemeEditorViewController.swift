@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  pickImage
 //
 //  Created by Kiyoshi Woolheater on 12/18/16.
@@ -147,13 +147,13 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBAction func share(_ sender: Any) {
         //Create a memed image, pass it to the activity view controller.
         let meme = generateMemedImage()
-        self.saveMeme()
         let activityVC = UIActivityViewController(activityItems: [meme],
                                                   applicationActivities: nil)
 
         activityVC.completionWithItemsHandler = {
             activity, completed, items, error in
             if completed {
+                self.saveMeme()
                 self.dismiss(animated: true, completion: nil)
                 self.navigationController?.popViewController(animated: true)
             }
@@ -201,6 +201,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         bottomTextField.text = "BOTTOM"
         //redisable share button
         shareButton.isEnabled = (imagePickerView.image != nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
