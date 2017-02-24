@@ -10,6 +10,7 @@ import UIKit
 
 class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var memeSentFromDetail: Meme?
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var albumButton: UIBarButtonItem!
@@ -40,13 +41,17 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         bottomTextField.text = "BOTTOM"
         let tap: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MemeEditorViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        if let memeFromDetail = memeSentFromDetail as Meme! {
+            imagePickerView.image = memeFromDetail.originalImage
+        }
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        shareButton.isEnabled = (imagePickerView.image != nil)
+        
+        shareButton?.isEnabled = (imagePickerView.image != nil)
         if (bottomTextField.text == "BOTTOM") {
             subscribeToKeyboardNotifications()
         }

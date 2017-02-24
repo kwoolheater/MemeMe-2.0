@@ -48,9 +48,8 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "ShowMemeViewController") as! ShowMemeViewController
         
         //populate the data
-        let memeForRow = self.memeData[indexPath.row]
-        detailController.memeData = memeForRow
-        
+        detailController.memeData = self.memeData[indexPath.row]
+
         //push controller
         navigationController!.pushViewController(detailController, animated: true)
     }

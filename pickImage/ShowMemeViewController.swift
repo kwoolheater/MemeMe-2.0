@@ -16,27 +16,29 @@ class ShowMemeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Sent Memes", style:.plain, target:nil, action:nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.edit, target: self, action: #selector(ShowMemeViewController.editMeme))
         self.image!.image = memeData?.memedImage
     }
     
-    @IBAction func editButton(_ sender: Any) {
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController") as! MemeEditorViewController
+    func saveExistingMemeChanges()
+    {
         
-        //populate the data
-        detailController.imagePickerView!.image = memeData?.originalImage
-        detailController.topTextField!.text = memeData?.topText
-        detailController.bottomTextField!.text = memeData?.bottomText
+    }
+    func editMeme() {
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        let resultVC = storyboard.instantiateViewController(withIdentifier: "MemeEditorViewController")as! MemeEditorViewController
+        // Recreate pieces of original saved image details
+        resultVC.memeSentFromDetail = self.memeData
+        resultVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(saveExistingMemeChanges))
+        let navController = UINavigationController(rootViewController: resultVC)
+        // Communicate the match
         
-        //push controller
-        self.navigationController!.pushViewController(detailController, animated: true)
+        present(navController, animated: true, completion: nil)
+        
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showEditor" {
-            
-        }
-    }
+    
     
     
 }
