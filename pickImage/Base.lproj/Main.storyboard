@@ -119,7 +119,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTf-j2-Um8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="383"/>
+            <point key="canvasLocation" x="7" y="385"/>
         </scene>
         <!--Show Meme View Controller-->
         <scene sceneID="0Ok-AH-0su">

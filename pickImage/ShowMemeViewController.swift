@@ -25,11 +25,12 @@ class ShowMemeViewController: UIViewController {
         
     }
     func editMeme() {
+        
+
         let storyboard = UIStoryboard (name: "Main", bundle: nil)
         let resultVC = storyboard.instantiateViewController(withIdentifier: "MemeEditorViewController")as! MemeEditorViewController
         // Recreate pieces of original saved image details
         resultVC.memeSentFromDetail = self.memeData
-        resultVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(saveExistingMemeChanges))
         let navController = UINavigationController(rootViewController: resultVC)
         // Communicate the match
         
