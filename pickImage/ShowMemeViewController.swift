@@ -16,6 +16,7 @@ class ShowMemeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"Sent Memes", style:.plain, target:nil, action:nil)
         self.image!.image = memeData?.memedImage
     }
     
@@ -28,9 +29,14 @@ class ShowMemeViewController: UIViewController {
         detailController.bottomTextField!.text = memeData?.bottomText
         
         //push controller
-        
-        
         self.navigationController!.pushViewController(detailController, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEditor" {
+            
+        }
+    }
+    
     
 }

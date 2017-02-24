@@ -99,7 +99,6 @@
                         <outlet property="imagePickerView" destination="lcY-dy-CiV" id="Ylq-Ju-yCG"/>
                         <outlet property="shareButton" destination="F3g-Oa-J3A" id="l5W-0f-q0h"/>
                         <outlet property="topTextField" destination="f6b-UC-Tvn" id="feC-SD-uPX"/>
-                        <segue destination="Ya0-lC-fOp" kind="show" identifier="tabBarSegue" id="879-Wq-Pur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G06-D0-qyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,7 +127,7 @@
                                     <navigationItem id="axb-OA-YLP">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="w5W-zs-FKB">
                                             <connections>
-                                                <action selector="editButton:" destination="9mU-cF-4QK" id="4cj-bq-kSJ"/>
+                                                <segue destination="ccy-Oc-GrS" kind="presentation" identifier="showEditor" id="rr5-n4-K8t"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -331,7 +330,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="memeTableView" destination="lcM-D5-2JY" id="9K3-Be-Muf"/>
-                        <segue destination="9mU-cF-4QK" kind="show" identifier="detailedViewController" id="Ttv-Rx-Pfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-Cc-d2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,6 +338,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YLW-i9-j2y"/>
+        <segue reference="rr5-n4-K8t"/>
     </inferredMetricsTieBreakers>
 </document>

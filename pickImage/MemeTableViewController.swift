@@ -23,6 +23,7 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        memeTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,20 +45,25 @@ class MemeTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //push controller
-        performSegue(withIdentifier: "detailedViewController", sender: indexPath.row)
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "ShowMemeViewController") as! ShowMemeViewController
         
+        //populate the data
+        let memeForRow = self.memeData[indexPath.row]
+        detailController.memeData = memeForRow
         
+        //push controller
+        navigationController!.pushViewController(detailController, animated: true)
     }
     
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "detailedViewController" {
-            let showMemeVC = segue.destination as! ShowMemeViewController
-            let memeData = sender as! Meme
-            showMemeVC.memeData = memeData
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "detailedViewController" {
+//            let showMemeVC = segue.destination as! ShowMemeViewController
+//            let memeData = sender as! Meme
+//            showMemeVC.memeData = memeData
+//        }
+//        
+//    }
     
     
 }
