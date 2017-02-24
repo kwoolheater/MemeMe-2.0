@@ -331,7 +331,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DXi-aE-bsA">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="vmq-OO-WHi"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h2Z-fh-Zlg">
                             <connections>
                                 <segue destination="ccy-Oc-GrS" kind="show" id="YLW-i9-j2y"/>
@@ -348,6 +347,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SaO-Wx-NsP"/>
+        <segue reference="YLW-i9-j2y"/>
     </inferredMetricsTieBreakers>
 </document>
